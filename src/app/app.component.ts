@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component,ViewChild } from '@angular/core';
+import {CommentComponent} from './comment/comment.component'
+
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  myquote="Live life king size";
+
+@ViewChild(CommentComponent) comComp:CommentComponent;
+
+buttonClickHandler(){
+  this.comComp.printMyName();
+}
 }
